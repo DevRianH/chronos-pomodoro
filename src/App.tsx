@@ -1,15 +1,15 @@
 import './styles/theme.css'
 import './styles/global.css'
-import {Container} from "./components/Container.tsx";
-import {Heading} from "./components/Heading.tsx";
+import {Index} from "./components/Heading";
+import {Container} from "./components/Container";
 
 export function App() {
     return <>
         <Container>
-            <Heading>Logo</Heading>
+            <Index>Logo</Index>
         </Container>
         <Container>
-            <Heading>Menu</Heading>
+            <Index>Menu</Index>
         </Container>
     </>;
 }
