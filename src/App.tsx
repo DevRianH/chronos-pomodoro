@@ -1,32 +1,15 @@
 import './styles/theme.css'
 import './styles/global.css'
+import {Container} from "./components/Container.tsx";
+import {Heading} from "./components/Heading.tsx";
 
 export function App() {
     return <>
-        <div className="container">
-            <div className="content">
-                <section>
-                    LOGO
-                </section>
-            </div>
-        </div><div className="container">
-            <div className="content">
-                <section>
-                    MENU
-                </section>
-            </div>
-        </div><div className="container">
-            <div className="content">
-                <section>
-                    FORM
-                </section>
-            </div>
-        </div><div className="container">
-            <div className="content">
-                <section>
-                    FOOTER
-                </section>
-            </div>
-        </div>
+        <Container>
+            <Heading>Logo</Heading>
+        </Container>
+        <Container>
+            <Heading>Menu</Heading>
+        </Container>
     </>;
 }
