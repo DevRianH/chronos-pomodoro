@@ -1,0 +1,19 @@
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: var(--text-over-primary);
+    transition: all 0.1s ease-in-out;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+}
+
+.icon:hover {
+    filter: brightness(80%);
+}
+
+.icon svg {
+    width: 2.4rem;
+    height: 2.4rem;
+}
