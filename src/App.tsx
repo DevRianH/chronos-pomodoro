@@ -3,13 +3,13 @@ import {Logo} from "./components/Logo/Logo.tsx";
 import {Menu} from "./components/Menu/Menu.tsx";
 import {DefaultInput} from "./components/DefaultInput/DefaultInput.tsx";
 import {CountDown} from "./components/CountDown/CountDown.tsx";
-
-import './styles/theme.css'
-import './styles/global.css'
 import {Cycles} from "./components/Cycles/Cycles.tsx";
 import {DefaultButton} from "./components/DefaultButton/DefaultButton.tsx";
 import {PlayCircleIcon} from "lucide-react";
 import {Footer} from "./components/Footer/Footer.tsx";
+
+import './styles/theme.css'
+import './styles/global.css'
 
 export function App() {
     return <>
@@ -31,7 +31,7 @@ export function App() {
                     <DefaultInput
                         id='meuInput'
                         type='text'
-                        labelText='Task:'
+                        labelText='Task'
                         placeholder='Digite algo'
                     />
                 </div>
