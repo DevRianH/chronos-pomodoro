@@ -8,7 +8,8 @@ import './styles/theme.css'
 import './styles/global.css'
 import {Cycles} from "./components/Cycles/Cycles.tsx";
 import {DefaultButton} from "./components/DefaultButton/DefaultButton.tsx";
-import {PlayCircleIcon, StopCircleIcon} from "lucide-react";
+import {PlayCircleIcon} from "lucide-react";
+import {Footer} from "./components/Footer/Footer.tsx";
 
 export function App() {
     return <>
@@ -30,7 +31,7 @@ export function App() {
                     <DefaultInput
                         id='meuInput'
                         type='text'
-                        labelText='asdf'
+                        labelText='Task:'
                         placeholder='Digite algo'
                     />
                 </div>
@@ -40,10 +41,13 @@ export function App() {
                 </div>
 
                 <div className="formRow">
-                    <DefaultButton icon={<PlayCircleIcon/>} color='green'/>
-                    <DefaultButton icon={<StopCircleIcon/>} color='red'/>
+                    <DefaultButton icon={<PlayCircleIcon/>}/>
                 </div>
             </form>
+        </Container>
+
+        <Container>
+            <Footer/>
         </Container>
     </>;
 }
