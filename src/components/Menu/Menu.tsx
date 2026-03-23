@@ -1,12 +1,14 @@
 import styles from "./Menu.module.css";
-import {HistoryIcon, HouseIcon, SettingsIcon, SunIcon} from "lucide-react";
+import {HistoryIcon, HouseIcon, MoonIcon, SettingsIcon, SunIcon} from "lucide-react";
 import {TabBar} from "../TabBar/TabBar.tsx";
 import {useState, useEffect} from "react";
 
 type AvailableThemes = 'dark' | 'light';
 
 export function Menu() {
-    const [theme, setTheme] = useState<AvailableThemes>('dark');
+    const [theme, setTheme] = useState<AvailableThemes>(() => {
+        return localStorage.getItem('theme') as AvailableThemes || 'dark';
+    });
 
     function handleThemeChange() {
         setTheme(prevTheme => {
@@ -17,11 +19,16 @@ export function Menu() {
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
     }, [theme]);
+
+    const nextThemeIcon = {
+        dark: SunIcon,
+        light: MoonIcon,
+    }
 
     return (
         <nav className={styles.menu}>
-            <h1>{theme}</h1>
             <TabBar icon={HouseIcon}
                     ariaLabel={'Tela de Início'}
                     title={'Tela de Início'}/>
@@ -31,7 +38,7 @@ export function Menu() {
             <TabBar icon={SettingsIcon}
                     ariaLabel={'Tela de Configurações'}
                     title={'Tela de Configurações'}/>
-            <TabBar icon={SunIcon}
+            <TabBar icon={nextThemeIcon[theme]}
                     ariaLabel={'Mudar Tema'}
                     title={'Mudar Tema'}
                     onClick={handleThemeChange}/>
