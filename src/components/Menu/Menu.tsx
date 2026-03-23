@@ -16,12 +16,7 @@ export function Menu() {
     }
 
     useEffect(() => {
-        console.log('Theme mudou', theme, Date.now());
         document.documentElement.setAttribute('data-theme', theme);
-
-        return () => {
-            console.log('Olha, este componente será atualizado')
-        }
     }, [theme]);
 
     return (
